@@ -1,0 +1,97 @@
+/* src/components/Login.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+.login-container {
+  background: url('../../imagenes/fondo.jpg') ;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: bold;
+  color: gold;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  margin-bottom: 30px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.btn-login {
+  background-color: #c7b299;
+  color: #fff;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.or {
+  margin: 15px 0;
+  font-size: 14px;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.btn-social {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.google {
+  color: #db4437;
+}
+
+.facebook {
+  color: #3b5998;
+}
+
+.forgot,
+.register {
+  display: block;
+  font-size: 14px;
+  margin: 8px 0;
+  text-decoration: none;
+  color: #333;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #666;
+}
