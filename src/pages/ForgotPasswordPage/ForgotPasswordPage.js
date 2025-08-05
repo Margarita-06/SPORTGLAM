@@ -2,6 +2,8 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 import { auth } from '../../firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
+import './ForgotPasswordPage.css'; // Importa el CSS
+import logo from '../../imagenes/Logo.png';
 
 function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
@@ -40,32 +42,40 @@ function ForgotPasswordPage() {
     window.location.href = '/';
   };
 
-  return (
-    <div className="d-flex justify-content-center align-items-center min-vh-100 bg-gradient">
-      <div className="form-card">
+  const handleCreateAccount = () => {
+    window.location.href = '/register';
+  };
 
-        <h3 className="mb-4 text-center">Recuperar Contraseña</h3>
+  return (
+    <div className="forgot-password-container">
+      <div className="forgot-password-box">
+        <img src={logo} alt="SportGlam Logo" className="logo-img" />
+        <i className="fas fa-lock lock-icon"></i>
+        <p className="message">
+          ¿Tienes problemas para entrar? <br />
+          Introduce tu correo electrónico o número de <br />
+          teléfono asociado a tu cuenta y te enviaremos un <br />
+          enlace para que vuelvas a entrar en tu cuenta.
+        </p>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Correo electrónico</label>
-            <input
-              type="email"
-              className="form-control"
-              id="email"
-              placeholder="tucorreo@ejemplo.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-          </div>
-          <div className="d-grid gap-2">
-            <button type="submit" className="btn btn-primary">Enviar instrucciones</button>
-            <button type="button" className="btn btn-outline-secondary" onClick={handleGoBack}>
-              Volver al inicio de sesión
-            </button>
-          </div>
+          <input
+            type="email"
+            className="form-control"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Correo electrónico"
+          />
+          <button type="submit" className="btn-submit">Enviar enlace de acceso</button>
         </form>
+        <div className="or">o</div>
+        <button type="button" className="btn-secondary" onClick={handleCreateAccount}>
+          Crear cuenta nueva
+        </button>
+        <button type="button" className="btn-secondary" onClick={handleGoBack}>
+          Volver al inicio de sesión
+        </button>
       </div>
+      <div className="footer">© SportGlam 2025</div>
     </div>
   );
 }

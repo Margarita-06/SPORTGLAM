@@ -1,0 +1,54 @@
+/* src/pages/Components/NotFound.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.not-found-container {
+  background: url('../../imagenes/fondo.jpg');
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.not-found-box {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-box h1 {
+  color: #dc3545; /* Rojo similar al de la imagen */
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+.not-found-box p {
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.btn-back {
+  background-color: #007bff; /* Azul similar al de la imagen */
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  background-color: #0056b3;
+}

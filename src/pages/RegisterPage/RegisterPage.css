@@ -1,0 +1,135 @@
+/* src/components/Register.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.register-container {
+    background: linear-gradient(to bottom, #5f5f5e, #FFFFFF);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.register-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.title {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.register-box input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #e9ecef;
+    /* Tono gris claro similar a la imagen */
+    text-align: left;
+}
+
+.btn-enter {
+    background-color: #c7b299;
+    color: #fff;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.or {
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+    position: relative;
+}
+
+.or::before,
+.or::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 40%;
+    height: 1px;
+    background: #ccc;
+}
+
+.or::before {
+    left: 0;
+}
+
+.or::after {
+    right: 0;
+}
+
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn-social {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.google {
+    color: #db4437;
+}
+
+.facebook {
+    color: #3b5998;
+}
+
+.login-link {
+    display: block;
+    font-size: 14px;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 0;
+    font-size: 12px;
+}

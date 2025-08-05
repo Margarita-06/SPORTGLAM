@@ -1,12 +1,9 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
-import ForgotPasswordPage from './pages/ForgotPasswordPage/ForgotPasswordPage';
+import ResetPasswordPage from './pages/ForgotPasswordPage/ForgotPasswordPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
-import UsersPages from './pages/UsersPages/UserPages'
-import ResetPasswordPage from "./pages/ResetPasswordPage/ResetPasswordPage";
-
-
+import UsersPages from './pages/UsersPages/UserPages';
 import NotFoundPage from './pages/Components/NotFound';
 import ProtectedRoute from './pages/Components/ProtectedRoute';
 
@@ -14,18 +11,22 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/Register" element={<RegisterPage />} />
-        <Route path="/Forgot" element={<ForgotPasswordPage />} />
-        <Route path="/dashboard" element={<ProtectedRoute> <DashboardPage /> </ProtectedRoute>} />
-        <Route path="/users" element={<ProtectedRoute> <UsersPages /> </ProtectedRoute>} />
-        <Route path="/ResetPassword" element={ <ResetPasswordPage />} />
+        {/* Redirección a la página de login por defecto */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        
+        {/* Rutas públicas */}
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} /> {/* Cambié a minúsculas */}
+        <Route path="/reset-password" element={<ResetPasswordPage />} /> {/* Cambié a minúsculas */}
 
+        {/* Rutas protegidas */}
+        <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+        <Route path="/users" element={<ProtectedRoute><UsersPages /></ProtectedRoute>} />
+
+        {/* Página 404 para rutas no encontradas */}
         <Route path="*" element={<NotFoundPage />} />
-
       </Routes>
     </BrowserRouter>
-
   );
 }
 
