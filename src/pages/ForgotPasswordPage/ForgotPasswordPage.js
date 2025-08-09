@@ -75,7 +75,6 @@ function ForgotPasswordPage() {
           Volver al inicio de sesión
         </button>
       </div>
-      <div className="footer">© SportGlam 2025</div>
     </div>
   );
 }

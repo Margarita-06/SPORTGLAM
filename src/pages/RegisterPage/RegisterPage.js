@@ -83,7 +83,7 @@ function RegisterPage() {
           <input type="email" className="form-control" name="email" value={formData.email} onChange={handleChange} placeholder="Correo electrónico" />
           <input type="text" className="form-control" name="ciudad" value={formData.ciudad} onChange={handleChange} placeholder="Ciudad" />
           <input type="text" className="form-control" name="direccion" value={formData.direccion} onChange={handleChange} placeholder="Dirección" />
-          <button type="submit" className="btn-enter">Entrar</button>
+          <p className="login-label">Iniciar sesión con:</p>
           <div className="or">o</div>
           <div className="social-buttons">
             <button type="button" className="btn-social google"><i className="fab fa-google"></i></button>
@@ -92,7 +92,6 @@ function RegisterPage() {
           <a href="/" className="login-link">¿Tienes una cuenta? ENTRAR</a>
         </form>
       </div>
-      <div className="footer">© SportGlam 2025</div>
     </div>
   );
 }

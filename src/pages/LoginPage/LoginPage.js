@@ -1,3 +1,4 @@
+
 // src/components/Login.js
 import React from 'react';
 import { Link } from 'react-router-dom';
@@ -9,8 +10,8 @@ function Login() {
     <div className="login-container">
       <div className="login-box">
         <img src={logo} alt="SportGlam Logo" className="logo-img" />
-        <input type="text" placeholder="Teléfono, correo electrónico" class ="form-input"/>
-        <input type="password" placeholder="Contraseña" class ="form-input"/>
+        <input type="text" placeholder="Teléfono, correo electrónico" className="form-input"/>
+        <input type="password" placeholder="Contraseña" className="form-input"/>
         <button className="btn-login">Iniciar sesión</button>
 
         <p className="or">Iniciar sesión con:</p>
@@ -20,9 +21,10 @@ function Login() {
         </div>
 
         <Link to="/forgot-password" className="forgot">¿Has olvidado tu contraseña?</Link>
-        <Link to="/register" className="register">¿No tienes una cuenta? ¡Regístrate!</Link>
+        <div className="register-box">
+          <Link to="/register" className="register">¿No tienes una cuenta? ¡Regístrate!</Link>
+        </div>
 
-        <footer className="footer">© SportGlam 2025</footer>
       </div>
     </div>
   );
