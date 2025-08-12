@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginPage from './pages/LoginPage/LoginPage';
 import RegisterPage from './pages/RegisterPage/RegisterPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ForgotPasswordPage/ForgotPasswordPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
 import UsersPages from './pages/UsersPages/UserPages';
@@ -18,8 +19,7 @@ function App() {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} /> {/* Cambié a minúsculas */}
         <Route path="/reset-password" element={<ResetPasswordPage />} /> {/* Cambié a minúsculas */}
-
-        {/* Rutas protegidas */}
+        <Route path='/forgot' element={<ForgotPasswordPage/>}/>
         <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         <Route path="/users" element={<ProtectedRoute><UsersPages /></ProtectedRoute>} />
 

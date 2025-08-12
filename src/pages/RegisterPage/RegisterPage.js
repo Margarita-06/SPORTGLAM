@@ -5,7 +5,7 @@ import { auth } from '../../firebase';
 import { db } from '../../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import './RegisterPage.css'; // Importa el CSS
-import logo from '../../imagenes/Logo.png';
+import Logo from '../../img/Logo.png';
 
 function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -75,7 +75,7 @@ function RegisterPage() {
   return (
     <div className="register-container">
       <div className="register-box">
-        <img src={logo} alt="SportGlam Logo" className="logo-img" />
+        <img src={Logo} alt="SportGlam Logo" className="logo-img" />
         <h3 className="title">Regístrate para conocer nuestras promociones</h3>
         <form onSubmit={handleSubmit}>
           <input type="text" className="form-control" name="nombresApellidos" value={formData.nombresApellidos} onChange={handleChange} placeholder="Nombres y apellidos" />
@@ -89,7 +89,7 @@ function RegisterPage() {
             <button type="button" className="btn-social google"><i className="fab fa-google"></i></button>
             <button type="button" className="btn-social facebook"><i className="fab fa-facebook-f"></i></button>
           </div>
-          <a href="/" className="login-link">¿Tienes una cuenta? ENTRAR</a>
+          <a href="dashboard" className="login-link">¿Tienes una cuenta? ENTRAR</a>
         </form>
       </div>
     </div>

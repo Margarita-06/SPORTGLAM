@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { auth } from '../../firebase';
 import { sendPasswordResetEmail } from 'firebase/auth';
 import './ForgotPasswordPage.css'; // Importa el CSS
-import logo from '../../imagenes/Logo.png';
+import Logo from '../../img/Logo.png';
 
 function ForgotPasswordPage() {
   const [email, setEmail] = useState('');
@@ -49,8 +49,12 @@ function ForgotPasswordPage() {
   return (
     <div className="forgot-password-container">
       <div className="forgot-password-box">
-        <img src={logo} alt="SportGlam Logo" className="logo-img" />
+        <div>
+        <img src={Logo} alt="SportGlam Logo" className="logo-img" />
+        </div>
+        <div>
         <i className="fas fa-lock lock-icon"></i>
+        </div>
         <p className="message">
           ¿Tienes problemas para entrar? <br />
           Introduce tu correo electrónico o número de <br />
