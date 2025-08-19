@@ -2,129 +2,96 @@ import React, { useState } from 'react';
 import { Search, ShoppingCart, Menu, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 import Logo from '../../img/Logo.png';
 import Imagen1 from '../../img/Imagen1.png';
-import './DashboardPage.css';
 import Imagen2 from '../../img/Imagen2.png';
+import Imagen3 from '../../img/Imagen3.png';
+import Imagen4 from '../../img/Imagen4.png';
+import Imagen5 from '../../img/Imagen5.png';
+import Imagen0 from '../../img/Imagen0.png';
+import './DashboardPage.css';
 
 const SportGlamHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Ahora cada slide tiene un color asociado
   const slides = [
-    {
-      id: 1,
-      image: Imagen1, 
-      alt: "Adidas sneakers collection"
-    },
-    {
-      id: 2,
-      image: Imagen2,
-      alt: "Sports equipment"
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=400&fit=crop&crop=center",
-      alt: "Athletic wear"
-    }
+    { id: 1, image: Imagen1, alt: "Adidas sneakers collection", bgColor: "#2a5cdd" }, // Azul
+    { id: 2, image: Imagen2, alt: "Sports equipment", bgColor: "#000000" }, // Negro
+    { id: 3, image: Imagen0, alt: "Athletic wear", bgColor: "#f2f0e9" } // Beige claro
   ];
 
   const featuredProducts = [
     {
       id: 1,
       name: "TENIS ADIDAS CAMPUS",
-      image: "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=300&h=200&fit=crop&crop=center",
+      image: Imagen3,
       buttonText: "Ver más"
     },
     {
       id: 2,
       name: "RELOJ INVICTA",
-      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300&h=200&fit=crop&crop=center",
+      image: Imagen4,
       buttonText: "Ver más"
     },
     {
       id: 3,
       name: "Camiseta deportiva Adidas",
-      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=200&fit=crop&crop=center",
+      image: Imagen5,
       buttonText: "Ver más"
     }
   ];
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-  };
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
     <div className="homepage">
-      {/* Header */}
+      {/* ---------------- HEADER ---------------- */}
       <header>
-        {/* Top bar */}
-        <div className="top-bar"></div>
-        
-        {/* Main header */}
         <div className="main-header">
+          {/* Logo */}
           <div className="logo-container">
             <img src={Logo} alt="Logo SportGlam" />
           </div>
-          
+
           {/* Search bar */}
           <div className="search-bar">
             <input type="text" placeholder="Buscar productos..." />
             <Search />
           </div>
-          
+
           {/* Header icons */}
           <div className="header-icons">
             <button>
-              <div className="placeholder-icon"></div>
+              <ShoppingCart size={22} />
             </button>
             <button>
-              <ShoppingCart size={24} />
+              <Menu size={22} />
             </button>
             <button>
-              <Menu size={24} />
-            </button>
-            <button>
-              <Globe size={24} />
+              <Globe size={22} />
             </button>
           </div>
         </div>
       </header>
 
-      {/* Hero Carousel */}
-      <div className="hero-carousel">
+      {/* ---------------- HERO CAROUSEL ---------------- */}
+      <div
+        className="hero-carousel"
+        style={{ backgroundColor: slides[currentSlide].bgColor }}
+      >
         <div className="carousel-inner">
           <img src={slides[currentSlide].image} alt={slides[currentSlide].alt} />
-          
-          {/* Carousel content overlay */}
-          <div className="carousel-overlay">
-            <div className="carousel-content">
-              <div className="shoe-layout">
-                <div className="shoe left-shoe"></div>
-                <div className="center-element"></div>
-                <div className="shoe right-shoe"></div>
-              </div>
-              <div className="diamonds">
-                <div className="diamond"></div>
-                <div className="diamond"></div>
-                <div className="diamond"></div>
-                <div className="diamond"></div>
-              </div>
-            </div>
-          </div>
-          
-          {/* Carousel navigation */}
+
           <button onClick={prevSlide} className="carousel-nav prev">
-            <ChevronLeft size={24} />
+            <ChevronLeft size={22} />
           </button>
           <button onClick={nextSlide} className="carousel-nav next">
-            <ChevronRight size={24} />
+            <ChevronRight size={22} />
           </button>
         </div>
       </div>
 
-      {/* Featured Products Section */}
+      {/* ---------------- FEATURED PRODUCTS ---------------- */}
       <div className="featured-products">
         <h2>PRODUCTOS DESTACADOS</h2>
         <div className="product-grid">
@@ -142,7 +109,7 @@ const SportGlamHomepage = () => {
         </div>
       </div>
 
-      {/* Footer */}
+      {/* ---------------- FOOTER ---------------- */}
       <footer>
         <p>© SportGlam 2025</p>
       </footer>
