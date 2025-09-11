@@ -111,7 +111,7 @@ const SportGlamHomepage = () => {
 
       {/* ---------------- FOOTER ---------------- */}
       <footer>
-        <p>© SportGlam 2025</p>
+        <p>© SportGlam 2025 - Todos los derechos reservados</p>
       </footer>
     </div>
   );

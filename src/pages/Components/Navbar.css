@@ -1,0 +1,99 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #f8f9fa;
+  color: rgb(5, 5, 5);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-left .logo {
+  height: 40px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Increased gap for more spacing */
+}
+
+/* Barra de búsqueda */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 400px;
+  flex: 1;
+  margin-right: 50px;
+}
+
+.search-bar input {
+  border: none;
+  padding: 5px 10px;
+  outline: none;
+}
+
+.search-bar .search-btn {
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Iconos */
+.icon-black {
+  color: #000 !important;
+  font-size: 20px;
+  cursor: pointer;
+  margin-right: 10px; /* Added spacing between icons */
+}
+
+.icon-black:hover {
+  color: #444; /* Consolidated hover effect */
+}
+
+/* Dropdown del menú */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown-menu a {
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+  background: #555;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .search-bar {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .icons {
+    display: none;
+  }
+
+  .navbar-right {
+    gap: 15px; /* Adjust spacing for mobile */
+  }
+}

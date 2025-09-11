@@ -4,6 +4,7 @@ import RegisterPage from './pages/RegisterPage/RegisterPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ForgotPasswordPage/ForgotPasswordPage';
 import DashboardPage from './pages/DashboardPage/DashboardPage';
+import FeaturedProducts from './pages/DashboardPage/FeaturedProducts';
 import UsersPages from './pages/UsersPages/UserPages';
 import NotFoundPage from './pages/Components/NotFound';
 import ProtectedRoute from './pages/Components/ProtectedRoute';
@@ -17,13 +18,16 @@ function App() {
         
         {/* Rutas públicas */}
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<RegisterPage />} /> {/* Cambié a minúsculas */}
-        <Route path="/reset-password" element={<ResetPasswordPage />} /> {/* Cambié a minúsculas */}
-        <Route path='/forgot' element={<ForgotPasswordPage/>}/>
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
+        <Route path="/forgot" element={<ForgotPasswordPage />} />
+
+        {/* Rutas privadas */}
         <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
+        <Route path="/featuredproducts" element={<ProtectedRoute><FeaturedProducts /></ProtectedRoute>} /> 
         <Route path="/users" element={<ProtectedRoute><UsersPages /></ProtectedRoute>} />
 
-        {/* Página 404 para rutas no encontradas */}
+        {/* Página 404 */}
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
