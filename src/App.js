@@ -8,6 +8,8 @@ import FeaturedProducts from './pages/DashboardPage/FeaturedProducts';
 import UsersPages from './pages/UsersPages/UserPages';
 import NotFoundPage from './pages/Components/NotFound';
 import ProtectedRoute from './pages/Components/ProtectedRoute';
+import FeaturedWatches from './pages/DashboardPage/FeaturedWatches';
+import WatchDetail from './pages/DashboardPage/WatchDetail';
 
 function App() {
   return (
@@ -26,6 +28,10 @@ function App() {
         <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         <Route path="/featuredproducts" element={<ProtectedRoute><FeaturedProducts /></ProtectedRoute>} /> 
         <Route path="/users" element={<ProtectedRoute><UsersPages /></ProtectedRoute>} />
+        {/* Relojes */}
+       <Route path="/featuredwatches" element={<ProtectedRoute><FeaturedWatches /></ProtectedRoute>} /> 
+      <Route path="/watch/:id" element={<ProtectedRoute><WatchDetail /></ProtectedRoute>} /> 
+
 
         {/* Página 404 */}
         <Route path="*" element={<NotFoundPage />} />

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom"; // Importamos Link
 import { FaBars, FaSearch, FaUser, FaHeart, FaShoppingCart } from "react-icons/fa";
 import "./Navbar.css";
 import Logo from "../../img/Logo.png"; // Asegúrate de tener este logo en /img
@@ -10,7 +11,9 @@ const Navbar = () => {
     <header className="navbar">
       {/* Logo */}
       <div className="navbar-left">
-        <img src={Logo} alt="SportGlam" className="logo" />
+        <Link to="/dashboard">   {/* Aquí redirige al dashboard */}
+          <img src={Logo} alt="SportGlam" className="logo" />
+        </Link>
       </div>
 
       {/* Lado derecho */}
@@ -34,10 +37,10 @@ const Navbar = () => {
       {/* Menú desplegable (para móvil) */}
       {menuOpen && (
         <nav className="dropdown-menu">
-          <a href="#">Inicio</a>
-          <a href="#">Productos</a>
-          <a href="#">Categorías</a>
-          <a href="#">Contacto</a>
+          <Link to="/">Inicio</Link>
+          <Link to="/productos">Productos</Link>
+          <Link to="/categorias">Categorías</Link>
+          <Link to="/contacto">Contacto</Link>
         </nav>
       )}
     </header>

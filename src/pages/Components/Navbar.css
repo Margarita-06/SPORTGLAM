@@ -49,7 +49,8 @@
   color: #000 !important;
   font-size: 20px;
   cursor: pointer;
-  margin-right: 10px; /* Added spacing between icons */
+  gap: 10px;
+  padding: 5px 10px;
 }
 
 .icon-black:hover {

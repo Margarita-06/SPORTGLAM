@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Search, ShoppingCart, Menu, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Logo from '../../img/Logo.png';
 import Imagen1 from '../../img/Imagen1.png';
 import Imagen2 from '../../img/Imagen2.png';
@@ -11,6 +12,7 @@ import './DashboardPage.css';
 
 const SportGlamHomepage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const navigate = useNavigate();
 
   // Ahora cada slide tiene un color asociado
   const slides = [
@@ -42,6 +44,14 @@ const SportGlamHomepage = () => {
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+
+  // Función para manejar la redirección al hacer clic en "Ver más"
+  const handleVerMas = (productId) => {
+    // Redirige al componente FeaturedProducts usando la ruta configurada
+    navigate('/featuredproducts');
+    
+    console.log(`Ver más del producto ID: ${productId}`);
+  };
 
   return (
     <div className="homepage">
@@ -102,7 +112,9 @@ const SportGlamHomepage = () => {
               </div>
               <div className="product-info">
                 <h3>{product.name}</h3>
-                <button>{product.buttonText}</button>
+                <button onClick={() => handleVerMas(product.id)}>
+                  {product.buttonText}
+                </button>
               </div>
             </div>
           ))}
