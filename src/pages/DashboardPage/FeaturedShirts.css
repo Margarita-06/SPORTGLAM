@@ -1,0 +1,36 @@
+.featured-shirts {
+  padding: 2rem;
+}
+
+.shirts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.shirt-card {
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.shirt-card:hover {
+  transform: scale(1.05);
+}
+
+.shirt-card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.shirt-price {
+  font-weight: bold;
+  color: #222;
+}
+
+.shirt-name {
+  color: #555;
+}

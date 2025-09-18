@@ -26,19 +26,24 @@ const SportGlamHomepage = () => {
       id: 1,
       name: "TENIS ADIDAS CAMPUS",
       image: Imagen3,
-      buttonText: "Ver más"
+      buttonText: "Ver más",
+      route: "/FeaturedProducts"
+      
     },
     {
       id: 2,
       name: "RELOJ INVICTA",
       image: Imagen4,
-      buttonText: "Ver más"
+      buttonText: "Ver más",
+      route: "/FeaturedWatches"
+
     },
     {
       id: 3,
       name: "Camiseta deportiva Adidas",
       image: Imagen5,
-      buttonText: "Ver más"
+      buttonText: "Ver más",
+      route: "/FeaturedShirts"
     }
   ];
 
@@ -46,11 +51,11 @@ const SportGlamHomepage = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   // Función para manejar la redirección al hacer clic en "Ver más"
-  const handleVerMas = (productId) => {
+  const handleVerMas = (route) => {
     // Redirige al componente FeaturedProducts usando la ruta configurada
-    navigate('/featuredproducts');
-    
-    console.log(`Ver más del producto ID: ${productId}`);
+    navigate(route);
+  
+    console.log(`Ver más del producto ID: ${route}`);
   };
 
   return (
@@ -112,7 +117,7 @@ const SportGlamHomepage = () => {
               </div>
               <div className="product-info">
                 <h3>{product.name}</h3>
-                <button onClick={() => handleVerMas(product.id)}>
+                <button onClick={() => handleVerMas(product.route)}>
                   {product.buttonText}
                 </button>
               </div>

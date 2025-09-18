@@ -1,0 +1,109 @@
+.product-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 40px;
+}
+
+.product-detail-left img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-detail-right h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.rating {
+  margin: 8px 0;
+  color: #333;
+}
+
+.price {
+  margin: 16px 0;
+  font-size: 18px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  margin-right: 10px;
+  color: gray;
+}
+
+.new-price {
+  color: #e63946;
+  font-weight: bold;
+}
+
+.sizes {
+  margin: 20px 0;
+}
+
+.size-options {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.size-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.add-cart-btn {
+  background: black;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  margin: 20px 0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* Acordeón */
+.accordion-item {
+  border-top: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 10px 0;
+  color: #555;
+}
+
+/* Relacionados */
+.related {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+}
+
+.related-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+}
+
+.related-card {
+  min-width: 150px;
+  cursor: pointer;
+  text-align: center;
+}
+.related-card img {
+  width: 100%;
+  border-radius: 8px;
+}

@@ -10,6 +10,11 @@ import NotFoundPage from './pages/Components/NotFound';
 import ProtectedRoute from './pages/Components/ProtectedRoute';
 import FeaturedWatches from './pages/DashboardPage/FeaturedWatches';
 import WatchDetail from './pages/DashboardPage/WatchDetail';
+import ProductDetail from "./pages/DashboardPage/ProductDetail";
+
+// 👇 Importa camisetas
+import FeaturedShirts from './pages/DashboardPage/FeaturedShirts';
+import ShirtsDetail from './pages/DashboardPage/ShirtsDetail';
 
 function App() {
   return (
@@ -28,10 +33,15 @@ function App() {
         <Route path="/dashboard" element={<ProtectedRoute><DashboardPage /></ProtectedRoute>} />
         <Route path="/featuredproducts" element={<ProtectedRoute><FeaturedProducts /></ProtectedRoute>} /> 
         <Route path="/users" element={<ProtectedRoute><UsersPages /></ProtectedRoute>} />
-        {/* Relojes */}
-       <Route path="/featuredwatches" element={<ProtectedRoute><FeaturedWatches /></ProtectedRoute>} /> 
-      <Route path="/watch/:id" element={<ProtectedRoute><WatchDetail /></ProtectedRoute>} /> 
 
+        {/* Relojes */}
+        <Route path="/featuredwatches" element={<ProtectedRoute><FeaturedWatches /></ProtectedRoute>} /> 
+        <Route path="/watch" element={<ProtectedRoute><WatchDetail /></ProtectedRoute>} /> 
+        <Route path="/product/:id" element={<ProductDetail />} />
+
+        {/* Camisetas 👕 */}
+        <Route path="/featuredshirts" element={<ProtectedRoute><FeaturedShirts /></ProtectedRoute>} />
+        <Route path="/shirts/:id" element={<ProtectedRoute><ShirtsDetail /></ProtectedRoute>} />
 
         {/* Página 404 */}
         <Route path="*" element={<NotFoundPage />} />
